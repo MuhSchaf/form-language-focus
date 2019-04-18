@@ -7,7 +7,7 @@ import {FormControl, Validators} from '@angular/forms'
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular';
+  name = 'You';
   form = new FormControl('', [Validators.required]);
 
    getErrorMessage() {

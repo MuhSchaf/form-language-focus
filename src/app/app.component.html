@@ -1,0 +1,18 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<div class="example-container">
+  <mat-form-field>
+    <input 
+      matInput 
+      placeholder="Enter your email" 
+      [formControl]="form" 
+      required
+      type="number"
+      lang="de-DE"
+    >
+    <mat-error *ngIf="form.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>

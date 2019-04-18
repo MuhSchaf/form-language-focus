@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms'
 
 @Component({
@@ -7,6 +7,10 @@ import {FormControl, Validators} from '@angular/forms'
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  
+  @ViewChild('inputField')
+  inputField: ElementRef
+
   name = 'You';
   form = new FormControl('', [Validators.required]);
 
@@ -14,5 +18,9 @@ export class AppComponent  {
     return this.form.hasError('required') ? 'You must enter a value' :
         this.form.hasError('email') ? 'Not a valid email' :
             '';
+  }
+
+  getLanguage() {
+    this.name = this.inputField.nativeElement.lang;
   }
 }

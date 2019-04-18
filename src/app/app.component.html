@@ -5,14 +5,15 @@
 
 <div class="example-container">
   <mat-form-field>
-    <input 
+    <input
+      #inputField 
       matInput 
       placeholder="Enter a nambär" 
       [formControl]="form" 
       required
       type="number"
-      lang="de-DE"
     >
     <mat-error *ngIf="form.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 </div>
+<button (click)="getLanguage()">Get Language</button>
